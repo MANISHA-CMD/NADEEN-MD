@@ -34,8 +34,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 *Reply This Message With Option*
 
-*1.1 Audio With Normal Format*
-*1.2 Audio With Document Format*
+*2.1 video With Normal Format*
+*2.2 video With Document Format*
 
 > *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*`;
 
