@@ -54,8 +54,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                         let downloadUrl = down.dl_url;
                         await conn.sendMessage(from, { audio: { url:downloadUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*', mimetype: 'audio/mpeg'},{ quoted: mek });
                         break;
-                    case '1.2':               
-                        // Send Document File
+                    case '1.2':
                         let downdoc = await fg.yta(url);
                         let downloaddocUrl = downdoc.dl_url;
                         await conn.sendMessage(from, { document: { url:downloaddocUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*', mimetype: 'audio/mpeg', fileName:data.title + ".mp3"}, { quoted: mek });
