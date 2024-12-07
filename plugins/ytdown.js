@@ -4,11 +4,11 @@ const fg = require('api-dylux');
 
 // -------- Song/Video Download --------
 cmd({
-    pattern: 'ytdown',
+    pattern: 'song',
     alias: ["get"],
-    desc: 'Download Song / Video',
+    desc: 'Download Song',
     use: '.play Title',
-    react: "🗂",
+    react: "🎵",
     category: 'download',
     filename: __filename
 },
@@ -36,8 +36,6 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 *1.1 Audio With Normal Format*
 *1.2 Audio With Document Format*
-*2.1 Video With Normal Format*
-*2.2 Video With Document Format*
 
 > *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*`;
 
@@ -56,23 +54,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                         let downloadUrl = down.dl_url;
                         await conn.sendMessage(from, { audio: { url:downloadUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*', mimetype: 'audio/mpeg'},{ quoted: mek });
                         break;
-                    case '1.2':               
-                        // Send Document File
-                        let downdoc = await fg.yta(url);
-                        let downloaddocUrl = downdoc.dl_url;
-                        await conn.sendMessage(from, { document: { url:downloaddocUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*', mimetype: 'audio/mpeg', fileName:data.title + ".mp3"}, { quoted: mek });
-                        await conn.sendMessage(from, { react: { text: '✅', key: mek.key } })
-                        break;
-                    case '2.1':
-                        let downvid = await fg.ytv(url);
-                        let downloadvUrl = downvid.dl_url;
-                        await conn.sendMessage(from, { video : { url:downloadvUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*', mimetype: 'video/mp4'},{ quoted: mek });
-                        break;
-                    case '2.2':
-                        let downviddoc = await fg.ytv(url);
-                        let downloadvdocUrl = downviddoc.dl_url;
-                        await conn.sendMessage(from, { document: { url:downloadvdocUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*', mimetype: 'video/mp4', fileName:data.title + ".mp4" }, { quoted: mek });
-                        break;
+                    case '1.2': 
                     default:
                         reply("Invalid option. Please select a valid option🔴");
                 }
