@@ -6,9 +6,9 @@ const fg = require('api-dylux');
 cmd({
     pattern: 'ytdown',
     alias: ["get"],
-    desc: 'Download Song',
+    desc: 'Download Song / Video',
     use: '.play Title',
-    react: "🎵",
+    react: "🗂",
     category: 'download',
     filename: __filename
 },
@@ -54,7 +54,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                         let downloadUrl = down.dl_url;
                         await conn.sendMessage(from, { audio: { url:downloadUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*', mimetype: 'audio/mpeg'},{ quoted: mek });
                         break;
-                    case '1.2': 
+                    case '1.2':               
+                        // Send Document File
+                        let downdoc = await fg.yta(url);
+                        let downloaddocUrl = downdoc.dl_url;
+                        await conn.sendMessage(from, { document: { url:downloaddocUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ*', mimetype: 'audio/mpeg', fileName:data.title + ".mp3"}, { quoted: mek });
                     default:
                         reply("Invalid option. Please select a valid option🔴");
                 }
