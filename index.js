@@ -19,7 +19,7 @@ const axios = require('axios')
 const { File } = require('megajs')
 const prefix = '.'
 
-const ownerNumber = ['94711451319']
+const ownerNumber = ['94759934522']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
@@ -160,36 +160,11 @@ if(!isOwner && config.MODE === "private") return
 if(!isOwner && isGroup && config.MODE === "inbox") return
 if(!isOwner && !isGroup && config.MODE === "groups") return
 //=========OWNER - REACTION ===============================  
-if(senderNumber.includes("94711451319")){
+if(senderNumber.includes("all")){
 if(isReact) return
-m.react("👨🏻‍💻")
+m.react("👨🏻‍💻,☺️,☣️,🉐,🌸,㊗️,🚀,🩷,🫣")
 }
-if(senderNumber.includes("94779483535")){
-if(isReact) return
-m.react("👨🏼‍💻")
-}
-if(senderNumber.includes("94775383340")){
-if(isReact) return
-m.react("👩🏽‍💻")
-}
-if(senderNumber.includes("94753751559")){
-if(isReact) return
-m.react("👾")
-}
-if(senderNumber.includes("94771588807")){
-if(isReact) return
-m.react("👾")
-}
-//=====================✓
-
-if (config.AUTO_VOICE === 'true') {    
-const url = 'https://raw.githubusercontent.com/Nadeenpoorna-max/NADEENMD_DATABASED/main/autovoice/NADEEN-DATA'
-let { data } = await axios.get(url)
-for (vr in data){
-if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) conn.sendMessage(from,{audio: { url : data[vr]},mimetype: 'audio/mpeg',ptt:true},{quoted:mek})   
- }}
-//====================================//
-        
+//=====================✓        
 const events = require('./command')
 const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
 if (isCmd) {
